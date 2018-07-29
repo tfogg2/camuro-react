@@ -1,0 +1,141 @@
+body {
+  background: #101010;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -mox-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #fff;
+  margin:0;
+}
+h1{
+  margin: 0;
+}
+.header, .home-content{
+  width: 80%;
+  padding: 0 10%;
+  margin: 0 auto;
+}
+.header {
+  height: 60px;
+  line-height: 60px;
+  text-align: left;
+  padding: 10px
+}
+.logo{
+  width: 200px;
+  float: left;
+}
+.home-content{
+  overflow: overlay;
+  position: absolute;
+}
+.home-bg{
+  background: url('./Assets/leicaM6.jpg');
+  background-size: cover;
+  background-position-y: -50px;
+  height: 700px;
+  width: 100%;
+  position: absolute;
+  -webkit-transform:translate3d(0,0,0.01);
+  transform:translate3d(0,0,0.01);
+  will-change: transform;
+}
+.home-cta{
+  width: 485px;
+  text-align: right;
+  float: right;
+}
+.home-cta h1{
+  font-size: 52px;
+  font-family: BryantWeb,Helvetica,Arial,sans-serif;
+}
+.left-nav h1 a{
+  transition: color 0.5s ease;
+}
+.left-nav h1 a:hover{
+  color: #c2b1a8;
+}
+.right-nav{
+  float: right;
+  display: block;
+  height: 60px;
+  margin:0;
+}
+.right-nav ul{
+  margin: 0;
+  height: 60px;
+  padding: 0;
+}
+.right-nav ul li{
+  display: inline-block;
+  margin-top: -5px;
+  transition: background-color 0.5s ease;
+  float: left;
+  cursor: pointer;
+}
+.right-nav ul li:hover{
+  background: #b84e40;
+}
+.right-nav .sell:hover{
+  background: #b84e40;
+}
+.right-nav .sell:hover a{
+  color: #fff;
+}
+.right-nav .sell a{
+  color: #c1a68f;
+}
+.right-nav .sell a:hover{
+  color: #fff;
+}
+.right-nav .search-box{
+  padding-top: 10px;
+}
+.right-nav .search{
+  height: 60px;
+  width: 45px;
+  position: absolute;
+  right: 160px;
+}
+.right-nav .search input{
+  width: 45px;
+  height: 32px;
+  border: 1px solid #101010;
+  border-radius: 4px;
+  top: 10px;
+  margin: 9px 0;
+  font-size: 15px;
+  color: #fff;
+  display: inline-block;
+  float: left;
+  background: #101010 url('./Assets/search-solid.svg') 12px;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  cursor: pointer;
+  transition: all 1.5s ease;
+  box-sizing: border-box;
+  outline: 0;
+  color: #101010;
+  padding-left: 40px;
+}
+.right-nav .expanded input{
+  border-radius: 15px;
+  border: 1px solid #fff;
+  width: 410px;
+  cursor: text;
+  right:0px;
+  padding-left: 45px;
+  color: #fff;
+}
+.right-nav i{
+  position: absolute;
+  transition: opacity 1s ease;
+  opacity: 0;
+  margin: 17px 0 0 -20px;
+  cursor: pointer;
+}
+.nav-links a{
+  padding: 0 10px;
+  text-decoration: none;
+  color: #fff;
+}
