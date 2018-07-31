@@ -7,26 +7,36 @@ class Header extends Component {
       <div className="header">
 
         <div className="logo">
-          <Link tag="h1" to="/">
-            Camuro
-          </Link>
+          <h1>
+            <Link exact="true" to="/">
+              Camuro
+            </Link>
+          </h1>
         </div>
 
         <div className="nav">
           <div  className="right-nav">
-            <ul className="nav-NavLinks">
-              <NavLink tag="li" to="/products/cameras">
-                Cameras
-              </NavLink>
-              <NavLink tag="li" to="/products/accessories">
-                Accessories
-              </NavLink>
-              <NavLink tag="li" to="/brands">
-                Brands
-              </NavLink>
-              <NavLink tag="li" to="/sell" class="sell">
-                Sell
-              </NavLink>
+            <ul className="navLinks">
+              <li>
+                <NavLink to="/products">
+                  Shop
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/brands">
+                  Brands
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/about">
+                  About
+                </NavLink>
+              </li>
+              <li className="sell">
+                <NavLink to="/sell">
+                  Sell
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

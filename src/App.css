@@ -25,6 +25,10 @@ h1{
   width: 200px;
   float: left;
 }
+.logo a{
+  text-decoration: none;
+  color: #fff;
+}
 .home-content{
   overflow: overlay;
   position: absolute;
@@ -134,8 +138,16 @@ h1{
   margin: 17px 0 0 -20px;
   cursor: pointer;
 }
-.nav-links a{
+.navLinks a{
+  display: block;
+  height: 60px;
   padding: 0 10px;
   text-decoration: none;
+  color: #fff;
+}
+.navLinks .active{
+  background: #b84e40;
+}
+.navLinks .sell .active{
   color: #fff;
 }
