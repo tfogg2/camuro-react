@@ -11,8 +11,8 @@ class Home extends Component {
     return(
       <div className="home">
         <div className="home-bg"></div>
+        <HomeCta />
         <div className="home-content">
-          <HomeCta />
           <div className="home-brands"></div>
           <div className="home-product-types"></div>
           <div className="home-featured"></div>

@@ -32,7 +32,7 @@ class Header extends Component {
                   About
                 </NavLink>
               </li>
-              <li className="sell">
+              <li>
                 <NavLink to="/sell">
                   Sell
                 </NavLink>

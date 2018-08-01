@@ -5,10 +5,15 @@ import _ from 'lodash';
 
 
 
-const ProductItem = ({ category, title }) => (
-  <div className="category__list-item box flex-spread">
-    {title}
-    <div className={`category--${category} circle`} />
+const ProductItem = ({ category, title, description }) => (
+  <div className="product">
+    <div className="product-image"></div>
+    <div className="product-title">
+      <h2>{title}</h2>
+    </div>
+    <div className="product-description">
+      <p>{description}</p>
+    </div>
   </div>
 );
 const ProductItems = ({ state: { products, displayCategory } }) => (
@@ -16,18 +21,18 @@ const ProductItems = ({ state: { products, displayCategory } }) => (
     {products
       .filter(
         ({ category }) =>
-          displayCategory === category || displayCategory === "all"
+          displayCategory === category || displayCategory === "All"
       )
-      .map(({ category, title }) => (
-        <ProductItem key={`ProductItems-${title}`} category={category} title={title} />
+      .map(({ category, title, description }) => (
+        <ProductItem key={`ProductItems-${title}`} category={category} title={title} description={description} />
       ))}
   </div>
 );
 
-const ButtonCategories = (productCategories, setCategory ) => (
+const ListCategories = (productCategories, setCategory ) => (
   productCategories.map((category) => (
       <li>
-        <NavLink to={'/products/' + category} key={category} className={`btn-${category}`} onClick={() => setCategory(category)}>
+        <NavLink to={'/products/' + category} key={category} className={`${category}`} onClick={() => setCategory(category)}>
           {category}
         </NavLink>
       </li>
@@ -38,15 +43,13 @@ const UI = ({
   state,
   state: { productCategories },
   setCategory,
-  allProducts
+  AllProducts
 }) => (
-  <div className="box flex-row">
-    <div className="box flex-col">
-      <h3>Filter by Category</h3>
-      {ButtonCategories(productCategories, setCategory )}
-    </div>
-    <div className="box flex-col">
-      <h3>Results</h3>
+  <div className="content">
+    <ul className="product-nav">
+      {ListCategories(productCategories, setCategory )}
+    </ul>
+    <div className="products">
       <ProductItems state={state} />
     </div>
   </div>
@@ -56,7 +59,7 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayCategory: "all",
+      displayCategory: "All",
       products: PRODUCTS,
       productCategories: PRODUCT_CATEGORIES
     };
@@ -68,15 +71,19 @@ class Products extends Component {
     });
   }
   render() {
-    return <UI setCategory={this.setCategory} state={this.state} />;
+    return <UI setCategory={this.setCategory} state={this.state} className />;
   }
 }
 
 // data
 const PRODUCTS = [
-  { title: "Nikon 35mm", category: "Lense" },
-  { title: "Canon Rebel", category: "Body" },
-  { title: "Strap", category: "Accessory" },
+  { title: "Nikon 35mm", description: "This is an example description about some camera shenanigans.", category: "Lenses" },
+  { title: "Canon Rebel", description: "This is an example description about some camera shenanigans.", category: "Bodies" },
+  { title: "Strap", description: "This is an example description about some camera shenanigans.", category: "Accessories" },
+  { title: "Canon Prime 100mm", description: "This is an example description about some camera shenanigans.", category: "Lenses" },
+  { title: "Sony Body", description: "This is an example description about some camera shenanigans.", category: "Bodies" },
+  { title: "Shutter Button", description: "This is an example description about some camera shenanigans.", category: "Accessories" },
+
 ]
 
 // get unique category items
@@ -85,7 +92,7 @@ const PRODUCT_CATEGORIES = PRODUCTS.map(prod => prod.category).filter(
   uniqueItems
 );
 
-PRODUCT_CATEGORIES.push("all");
+PRODUCT_CATEGORIES.push("All");
 PRODUCT_CATEGORIES.sort();
 
 export default Products
