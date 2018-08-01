@@ -5,16 +5,21 @@ import _ from 'lodash';
 
 
 
-const ProductItem = ({ category, title, description }) => (
-  <div className="product">
-    <div className="product-image"></div>
-    <div className="product-title">
-      <h2>{title}</h2>
+
+
+
+const ProductItem = ({ product, category, title, description }) => (
+  <Link to={`/product/${title}`}>
+    <div className="product">
+      <div className="product-image"></div>
+      <div className="product-title">
+        <h2>{title}</h2>
+      </div>
+      <div className="product-description">
+        <p>{description}</p>
+      </div>
     </div>
-    <div className="product-description">
-      <p>{description}</p>
-    </div>
-  </div>
+  </Link>
 );
 const ProductItems = ({ state: { products, displayCategory } }) => (
   <div>
@@ -24,20 +29,23 @@ const ProductItems = ({ state: { products, displayCategory } }) => (
           displayCategory === category || displayCategory === "All"
       )
       .map(({ category, title, description }) => (
-        <ProductItem key={`ProductItems-${title}`} category={category} title={title} description={description} />
+          <ProductItem key={`ProductItems-${title}`} category={category} title={title} description={description} />
       ))}
   </div>
 );
 
 const ListCategories = (productCategories, setCategory ) => (
-  productCategories.map((category) => (
+  productCategories.map((category) => {
+    const cat = category === "All" ? '' : category
+    return (
       <li>
-        <NavLink to={'/products/' + category} key={category} className={`${category}`} onClick={() => setCategory(category)}>
+        <NavLink exact="true" to={'/products/' + cat} key={category} className={`${category}`} onClick={() => setCategory(category)}>
           {category}
         </NavLink>
       </li>
-      ))
-);
+    )
+  })
+)
 
 const UI = ({
   state,
@@ -53,7 +61,7 @@ const UI = ({
       <ProductItems state={state} />
     </div>
   </div>
-);
+)
 
 class Products extends Component {
   constructor(props) {
@@ -68,7 +76,12 @@ class Products extends Component {
   setCategory(category) {
     this.setState({
       displayCategory: category
-    });
+    })
+  }
+  setProduct(category, title, description) {
+    this.setState({
+      category: category
+    })
   }
   render() {
     return <UI setCategory={this.setCategory} state={this.state} className />;

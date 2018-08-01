@@ -45,14 +45,20 @@ h1{
   background-color: #000;
   opacity: .9;
   background-size: cover;
-  background-position-y: -60px;
+  background-position-y: -125px;
   background-position-x: -175px;
   height: 700px;
   width: 100%;
   position: absolute;
   -webkit-transform:translate3d(0,0,0.01);
   transform:translate3d(0,0,0.01);
+  transition: opacity 2s .3s;
+  -webkit-transition: opacity 2s .3s;
   will-change: transform;
+  opacity: 0;
+}
+.home-bg.visible{
+  opacity: 1;
 }
 .home-cta{
   width: 385px;
@@ -222,14 +228,14 @@ h1{
   text-decoration: none;
 
 }
-
-
 .product-nav li .active {
   color: #c6574a;
   text-decoration: none;
 }
 .products{
   color: #000;
+  overflow: overlay;
+  padding: 20px 0;
 }
 .product{
   width: 23.3%;
