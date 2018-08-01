@@ -7,7 +7,7 @@ class HomeCta extends Component {
       <div className="home-cta">
         <h1>Film.</h1><br/>
         <h1>It's what <Link to='/about'>we</Link> do.</h1>
-        <Link to="/products/all">
+        <Link to="/products">
           <button className="cta-btn">
             Shop Now
           </button>
