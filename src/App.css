@@ -121,12 +121,17 @@ h1{
   padding: 100px 0px;
   overflow: overlay;
 }
+.react-reveal{
+  display: inline-block;
+  height: 240px;
+  width: 360px;
+  margin: 20px;
+}
 .product-type{
   height: 240px;
   width: 360px;
   background-size: contain;
   display: inline-block;
-  margin: 20px;
 }
 .lens-image{
   background: url('./Assets/lenses.png') no-repeat;
@@ -323,4 +328,11 @@ h1{
 }
 .product-title, .product-description{
   margin: 10px 0;
+}
+.slide-enter {
+  transform: translateY(-100%);
+}
+.slide-enter.slide-enter-active{
+  transform: translateY(0);
+  transition: transform 5s ease-in;
 }
