@@ -44,7 +44,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => <Home />}/>
             <Route path="/products" render={() => <Products products={this.state.products} />} />
-            <Route path="/product/" component={Product} />} />
+            <Route path="/product/:title" component={Product} />} />
             <Route path="/brands" component={Brands} />} />
             <Route path="/sell" component={OfferForm} />} />
             <Route path="/about" component={About} />} />

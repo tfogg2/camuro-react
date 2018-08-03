@@ -9,17 +9,15 @@ import _ from 'lodash';
 
 
 const ProductItem = ({ product, category, title, description }) => (
-  <Link to={`/product/${title}`}>
-    <div className="product">
-      <div className="product-image"></div>
-      <div className="product-title">
-        <h2>{title}</h2>
-      </div>
-      <div className="product-description">
-        <p>{description}</p>
-      </div>
+  <div className="product">
+    <div className="product-image"></div>
+    <div className="product-title">
+      <h2>{title}</h2>
     </div>
-  </Link>
+    <div className="product-description">
+      <p>{description}</p>
+    </div>
+  </div>
 );
 const ProductItems = ({ state: { products, displayCategory } }) => (
   <div>
@@ -29,7 +27,9 @@ const ProductItems = ({ state: { products, displayCategory } }) => (
           displayCategory === category || displayCategory === "All"
       )
       .map(({ category, title, description }) => (
-          <ProductItem key={`ProductItems-${title}`} category={category} title={title} description={description} />
+        <Link to={`/product/${title}`} component={Product}>
+          <Product key={`ProductItems-${title}`} category={category} title={title} description={description} />
+        </Link>
       ))}
   </div>
 );

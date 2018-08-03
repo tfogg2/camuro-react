@@ -15,17 +15,17 @@ body {
   height: 200px;
   width: 100%;
   position: absolute;
-  background: #000;
+  background: #101010;
 }
 h1{
   margin: 0;
 }
 .header, .home-content{
-  width: 80%;
-  padding: 0 10%;
   margin: 0 auto;
 }
 .header {
+  width: 80%;
+  padding: 0 10%;
   height: 60px;
   line-height: 65px;
   text-align: left;
@@ -50,6 +50,7 @@ h1{
   min-height: 1000px;
   background: #fff;
   overflow: overlay;
+  width: 100%;
 }
 .home-bg{
   background: url('./Assets/leicaM6-dark.png') no-repeat;
@@ -67,6 +68,7 @@ h1{
   -webkit-transition: opacity 2s .3s;
   will-change: transform;
   opacity: 0;
+  box-shadow: 0px 10px 14px #9e9e9e;
 }
 .home-bg.visible{
   opacity: 1;
@@ -85,8 +87,8 @@ h1{
 .home-cta a{
   text-decoration: none;
   color: #CEA962;
-  transition: color 0.75s ease;
-  -webkit-transition: all .75s ease; /* Safari */
+  transition: color 0.5s ease;
+  -webkit-transition: all .5s ease; /* Safari */
 }
 .home-cta a:hover{
   color: #8B7345;
@@ -110,6 +112,67 @@ h1{
 }
 .home-cta button:hover{
   background-color: #9C483F;
+}
+.home-bottom-cta{
+  color: #101010;
+}
+.home-product-types{
+  width: 100%;
+  padding: 100px 0px;
+  overflow: overlay;
+}
+.product-type{
+  height: 240px;
+  width: 360px;
+  background-size: contain;
+  display: inline-block;
+  margin: 20px;
+}
+.lens-image{
+  background: url('./Assets/lenses.png') no-repeat;
+}
+.body-image{
+  background: url('./Assets/leica-r7.png') no-repeat;
+}
+.accessory-image{
+  background: url('./Assets/film.png') no-repeat;
+}
+.product-type h3{
+  color: #fff;
+  font-size: 46px;
+  font-weight: 500;
+  margin: 80px 0px;
+  position: relative;
+}
+.type-cover{
+  width: 360px;
+  height: 240px;
+  opacity: .4;
+  position: absolute;
+  background: #101010;
+  transition: opacity 0.75s ease-in-out;
+}
+.type-cover:hover{
+  opacity: .6;
+}
+.featured-container{
+  height: 200px;
+  background: #101010;
+  padding: 0 60px;
+  margin: 0 0 120px 0;
+}
+.featured{
+  height: 150px;
+  margin: 0 auto;
+  padding: 25px;
+  overflow: -webkit-paged-x;
+}
+.featured-product{
+  width: 200px;
+  height: 150px;
+  margin: 0 25px;
+  float: left;
+  background: #222121;
 }
 .left-nav h1 a{
   transition: color 0.5s ease;
