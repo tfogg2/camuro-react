@@ -1,49 +1,45 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import _ from 'lodash';
+import React, { Component } from 'react'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import _ from 'lodash'
+
+import { bindActionCreators } from 'redux'
+import * as CartActionCreators from './Actions/Cart'
+import { connect } from 'react-redux'
+
+import Cart from './Components/Cart'
 import Header from './Components/Header/Header.js'
-import Home from './Components/Home/Home.js';
-import Products from './Components/Products/Products.js';
-import Product from './Components/Products/Product.js';
-import OfferForm from './Components/Offers/OfferForm.js';
-import Brands from './Components/Brands.js';
-import About from './Components/About.js';
-import NotFound from './Components/NotFound.js';
-import Footer from './Components/Footer.js';
+import Home from './Components/Home/Home.js'
+import Products from './Components/Products/Products.js'
+import Product from './Components/Products/Product.js'
+import OfferForm from './Components/Offers/OfferForm.js'
+import Brands from './Components/Brands.js'
+import About from './Components/About.js'
+import NotFound from './Components/NotFound.js'
+import Footer from './Components/Footer.js'
 import './App.css';
 
-const products = [
-  {
-    title: "test",
-    category: "lense",
-  },
-  {
-    title: "canon",
-    category: "body",
-  }
-]
-
-
 class App extends Component {
-  state = {
-    products: products,
-    brands: [],
-  }
-
-  onPressToggle = (category) => {
-    this.setState({
-      products: _.filter(products, {category: category})
-    })
-  }
 
   render() {
+    const {dispatch, cartProducts} = this.props
+    const addProduct = bindActionCreators(CartActionCreators.addProduct, dispatch)
+    const removeProduct = bindActionCreators(CartActionCreators.removeProduct, dispatch)
+
+    const cartComponent = this.props.cartProducts.map((product, index) => (
+      <Cart
+        addProduct = {addProduct}
+        removeProduct = {removeProduct}
+      />
+    ))
+
     return (
       <BrowserRouter>
         <div className="App">
-          <Header />
+          <Header addProduct={addProduct} removeProduct={removeProduct}/>
           <Switch>
             <Route exact path="/" render={() => <Home />}/>
-            <Route path="/products" render={() => <Products products={this.state.products} />} />
+            <Route path="/cart" render={() => <Cart removeProduct={removeProduct} cartProducts={cartProducts}/>} />
+            <Route path="/products" render={() => <Products addProduct={addProduct}/>} />
             <Route path="/product/:title" component={Product} />} />
             <Route path="/brands" component={Brands} />} />
             <Route path="/sell" component={OfferForm} />} />
@@ -57,4 +53,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => (
+  {
+    cartProducts: state.cartProducts
+  }
+)
+
+export default connect(mapStateToProps)(App);
