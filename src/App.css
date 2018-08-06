@@ -40,25 +40,23 @@ h1{
   overflow: overlay;
   border: 1px solid #e8e8e8;
 }
-.cart-product-title{
+.cart-product{
   border-bottom: 1px solid #e8e8e8;
-  width: 80%
+}
+.cart-product-title{
+  width: 20%;
 }
 .cart-product-title h3{
   padding: 10px 0;
 }
-.cart-product-title, .cart-product-description{
-  float: left;
-}
 .cart-product-description{
-  width: 60%
+  width: 60%;
 }
 .cart-product-price{
-  float: right;
+  width: 10%;
 }
 .remove-product{
-  float: right;
-  margin-left: 10px;
+  width: 10%;
   cursor: pointer;
 }
 /* CART */
