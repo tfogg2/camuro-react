@@ -19,18 +19,14 @@ import Footer from './Components/Footer.js'
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+   super(props);
+  }
 
   render() {
-    const {dispatch, cartProducts} = this.props
+    const {dispatch, cartProducts, total} = this.props
     const addProduct = bindActionCreators(CartActionCreators.addProduct, dispatch)
     const removeProduct = bindActionCreators(CartActionCreators.removeProduct, dispatch)
-
-    const cartComponent = this.props.cartProducts.map((product, index) => (
-      <Cart
-        addProduct = {addProduct}
-        removeProduct = {removeProduct}
-      />
-    ))
 
     return (
       <BrowserRouter>
@@ -38,7 +34,7 @@ class App extends Component {
           <Header addProduct={addProduct} removeProduct={removeProduct}/>
           <Switch>
             <Route exact path="/" render={() => <Home />}/>
-            <Route path="/cart" render={() => <Cart removeProduct={removeProduct} cartProducts={cartProducts}/>} />
+            <Route path="/cart" render={() => <Cart removeProduct={removeProduct} cartProducts={cartProducts} total={total}/>} />
             <Route path="/products" render={() => <Products addProduct={addProduct}/>} />
             <Route path="/product/:title" component={Product} />} />
             <Route path="/brands" component={Brands} />} />
@@ -55,7 +51,8 @@ class App extends Component {
 
 const mapStateToProps = state => (
   {
-    cartProducts: state.cartProducts
+    cartProducts: state.cartProducts,
+    total: state.total
   }
 )
 

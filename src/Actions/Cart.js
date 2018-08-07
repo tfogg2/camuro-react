@@ -1,20 +1,22 @@
 import * as CartActionTypes from '../ActionTypes/Cart'
 
-export const addProduct = (title, category, description, price, index) => {
+export const addProduct = (title, category, description, price, index, image) => {
   return {
     type: CartActionTypes.ADD_PRODUCT,
     title,
     category,
     description,
     price,
-    index
+    index,
+    image
   }
 }
 
-export const removeProduct = index => {
+export const removeProduct = (index, price) => {
   return {
     type: CartActionTypes.REMOVE_PRODUCT,
-    index
+    index,
+    price
   }
 }
 

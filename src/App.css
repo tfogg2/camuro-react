@@ -34,13 +34,20 @@ h1{
   background: #fff;
   width: 80%;
   margin: 0 10%;
-  padding: 40px;
-  text-align: left;
+  padding: 40px 40px 80px 40px;
+  text-align: center;
   box-sizing: border-box;
   overflow: overlay;
   border: 1px solid #e8e8e8;
 }
-.cart-product{
+.cart-content .cart-total-row td{
+  border-bottom: none
+}
+.cart-content .cart-header td{
+  border-bottom: none;
+}
+.cart-content td{
+  padding: 30px 10px;
   border-bottom: 1px solid #e8e8e8;
 }
 .cart-product-title{
@@ -49,15 +56,33 @@ h1{
 .cart-product-title h3{
   padding: 10px 0;
 }
-.cart-product-description{
-  width: 60%;
+.cart-product-image{
+  width: 200px;
+}
+.cart-product-image img{
+  width: 200px;
 }
 .cart-product-price{
-  width: 10%;
 }
-.remove-product{
-  width: 10%;
+.cart-content .remove-product {
+  width: 14px;
+  border-bottom: none;
+}
+.remove-product a{
+  float: left;
+  position: relative;
+  top: -85px;
   cursor: pointer;
+}
+.cart-checkout{
+  width: 200px;
+  position: absolute;
+  right: 10%;
+}
+.cart-checkout a, p{
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 /* CART */
 
