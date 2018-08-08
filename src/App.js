@@ -39,6 +39,7 @@ class App extends Component {
             <Route path="/product/:title" component={Product} />} />
             <Route path="/brands" component={Brands} />} />
             <Route path="/sell" component={OfferForm} />} />
+            <Route path="/gallery" component={OfferForm} />} />
             <Route path="/about" component={About} />} />
             <Route component={NotFound} />
           </Switch>
