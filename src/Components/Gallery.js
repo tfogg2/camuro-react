@@ -28,16 +28,18 @@ class Gallery extends Component {
       </div>
     )
 
-    const UI = ({ state, state: { gallery }, coverClass }) => (
-      <div className="gallery">
-        <div className="gallery-header">
-          <h3>Photos for the People</h3>
-          <p>By the People</p>
+    const UI = ({ state, state: { gallery } }) => (
+      <Fade bottom>
+        <div className="gallery">
+          <div className="gallery-header">
+            <h3>Photos for the People</h3>
+            <p>By the People</p>
+          </div>
+          <div className="gallery-items">
+            <Gallery state={state} />
+          </div>
         </div>
-        <div className="gallery-items">
-          <Gallery state={state} coverClass={coverClass}/>
-        </div>
-      </div>
+      </Fade>
     )
 
     return <UI state={this.state}  />

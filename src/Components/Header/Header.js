@@ -18,18 +18,13 @@ class Header extends Component {
           <div  className="right-nav">
             <ul className="navLinks">
               <li>
-                <NavLink to="/products">
-                  Shop
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/sell">
                   Sell
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/gallery">
-                  Gallery
+                <NavLink to="/products">
+                  Shop
                 </NavLink>
               </li>
               <li>

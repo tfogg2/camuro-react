@@ -6,6 +6,7 @@ import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Fade from 'react-reveal/Fade'
 import _ from 'lodash'
+import Footer from '../Footer.js'
 
 
 
@@ -33,6 +34,7 @@ class Home extends Component {
         <div className="home-content">
           <Gallery />
         </div>
+        <Footer />
       </div>
     )
   }

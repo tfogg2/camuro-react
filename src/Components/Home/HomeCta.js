@@ -6,8 +6,8 @@ class HomeCta extends Component {
     return(
       <div className="home-cta">
          <h1>We buy Film.</h1>
-         <h2 className="selling">Are you selling?</h2>
-         <Link to="/sell"><button className="cta-btn">Let us know</button></Link>
+         <Link to="/sell"><h2 className="selling">Are you selling?</h2></Link>
+
       </div>
     )
   }
@@ -25,3 +25,4 @@ export default HomeCta;
 //     Shop Now
 //   </button>
 // </Link>
+// <Link to="/sell"><button className="cta-btn">Let us know</button></Link>

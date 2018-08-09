@@ -15,7 +15,6 @@ import OfferForm from './Components/Offers/OfferForm.js'
 import Brands from './Components/Brands.js'
 import About from './Components/About.js'
 import NotFound from './Components/NotFound.js'
-import Footer from './Components/Footer.js'
 import './App.css';
 
 class App extends Component {
@@ -39,11 +38,10 @@ class App extends Component {
             <Route path="/product/:title" component={Product} />} />
             <Route path="/brands" component={Brands} />} />
             <Route path="/sell" component={OfferForm} />} />
-            <Route path="/gallery" component={OfferForm} />} />
             <Route path="/about" component={About} />} />
             <Route component={NotFound} />
           </Switch>
-          <Footer />
+
         </div>
       </BrowserRouter>
     );

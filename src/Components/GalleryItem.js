@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 const GalleryItem = props => {
 
   return(
-    <div className="gallery-item" onMouseEnter={props.handleHover} onMouseLeave={props.handleHover}>
+    <div className="gallery-item" >
       <img src={props.image} alt={props.title} />
     </div>
   )
