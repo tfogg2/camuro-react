@@ -5,7 +5,10 @@ class OfferForm extends Component {
   render(){
     return(
       <div className="content">
-        <ReactContactForm to="address@gmail.com" />
+        <div className="sell-form-content">
+          <h2>SELL US YOUR SHIT</h2>
+          <ReactContactForm to="address@gmail.com" className="sell-form" titlePlaceholder="Item..." buttonText="Send" contentsPlaceholder="Description..."/>
+        </div>
       </div>
     )
   }
