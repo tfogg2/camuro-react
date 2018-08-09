@@ -61,12 +61,15 @@ class Products extends Component {
       setCategory,
       AllProducts
     }) => (
-      <div className="content">
-        <ul className="product-nav">
-          {ListCategories(productCategories, setCategory )}
-        </ul>
-        <div className="products">
-          <ProductItems state={state} />
+      <div className="overlay">
+        <h2 className="coming-soon">Coming Soon</h2>
+        <div className="content product-content">
+          <ul className="product-nav">
+            {ListCategories(productCategories, setCategory )}
+          </ul>
+          <div className="products">
+            <ProductItems state={state} />
+          </div>
         </div>
       </div>
     )

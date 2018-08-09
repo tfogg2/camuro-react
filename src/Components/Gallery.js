@@ -49,11 +49,17 @@ class Gallery extends Component {
 
 const GALLERY = [
   { image: require("../Assets/leica-r7.png"), title: "Nikon 35mm",credit: "This is an example description about some camera shenanigans."},
-  { image: require("../Assets/camera-body.png"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
-  { image: require("../Assets/film.png"), title: "Film", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/chad-dalke.jpg"), title: "Shutter Button", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/hanny.jpg"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/filtergrade-nikon.jpg"), title: "Film", credit: "This is an example description about some camera shenanigans."},
   { image: require("../Assets/lenses.png"), title: "Canon Prime 100mm", credit: "This is an example description about some camera shenanigans."},
-  { image: require("../Assets/leica-r7.png"), title: "Sony Body", credit: "This is an example description about some camera shenanigans."},
-  { image: require("../Assets/camera-body.png"), title: "Shutter Button", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/ariel.jpg"), title: "Sony Body", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/camera-body.png"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/joseph-chan.jpg"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/jesus-santos.jpg"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/mia-domenico.jpg"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/mpho-mojapelo.jpg"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
+  { image: require("../Assets/luo-ping.jpg"), title: "Canon Rebel", credit: "This is an example description about some camera shenanigans."},
 ]
 
 export default Gallery;

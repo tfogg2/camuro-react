@@ -23,16 +23,15 @@ class Header extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/products">
-                  Shop
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/about">
                   About
                 </NavLink>
               </li>
-
+              <li>
+                <NavLink to="/products">
+                  Shop
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

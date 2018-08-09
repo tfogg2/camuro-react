@@ -15,7 +15,7 @@ body {
   height: 200px;
   width: 100%;
   position: absolute;
-  background: #101010;
+  background: #1d1d1d;
 }
 h1{
   margin: 0;
@@ -112,7 +112,6 @@ h1{
   min-width: 672px;
 }
 .home-content{
-  min-height: 1000px;
   width: 100%;
   background: #fff;
   overflow: overlay;
@@ -174,6 +173,7 @@ h1{
 }
 .home-cta h2{
   padding: 20px 0 40px 0;
+  width: 155px;
   font-weight: 300;
   margin: 0;
   font-size: 22px;
@@ -409,6 +409,18 @@ h1{
   overflow: overlay;
   padding: 20px 0;
 }
+.overlay{
+  background: #000;
+}
+.coming-soon{
+  position: absolute;
+  font-size: 52px;
+  margin-top: 65px;
+  width: 100%;
+}
+.product-content{
+  opacity: .15;
+}
 .product{
   width: 23.3%;
   margin: 20px 5%;
@@ -432,21 +444,21 @@ h1{
 
 /* Offers */
 .sell-content{
-  background: #391C19;
-  height: 600px;
+  background: #1d1d1d;
+  height: 560px;
 }
 .sell-form-content{
   background: #f7f7f7;;
   width: 60%;
   position: absolute;
-  margin: 60px 20%;
+  margin: 40px 20%;
   padding: 40px;
   box-sizing: border-box;
   border-radius: 5px;
 }
 .sell-form-content h1{
   margin-bottom: 40px;
-  color: #101010;
+  color: #1d1d1d;
   font-size: 42px;
   font-weight: 300;
 }
@@ -492,9 +504,9 @@ h1{
 
 /* Gallery */
 .gallery{
-  width: 98%;
+  width: 90%;
   min-height: 600px;
-  padding: 20px 1%;
+  padding: 20px 5% 100px 5%;
   overflow: overlay;
 }
 .gallery-header{
@@ -527,6 +539,7 @@ h1{
   opacity: 1;
   width: 33%;
   min-width: 200px;
+  height: 240px;
   margin-top: -6px;
   display: inline-block;
 }
@@ -534,6 +547,7 @@ h1{
   background: #000;
 }
 .gallery-item img{
+  height: 240px;
   opacity: 1;
   transition: opacity .5s ease;
 }
@@ -549,4 +563,11 @@ h1{
 }
 .gallery-item img{
   width: 100%
+}
+
+.about{
+  color: #1d1d1d;
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px;
 }
