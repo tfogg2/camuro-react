@@ -7,17 +7,10 @@ class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHovered: false,
-      gallery: GALLERY,
+      gallery: GALLERY
     }
-    this.handleHover = this.handleHover.bind(this)
   }
 
-  handleHover(){
-    this.setState({
-        isHovered: !this.state.isHovered
-    });
-  }
 
   render(){
     const Gallery = ({state:{ gallery }}) => (

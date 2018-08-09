@@ -1,12 +1,32 @@
 import React, {Component} from 'react'
 
-const GalleryItem = props => {
+class GalleryItem extends Component {
 
-  return(
-    <div className="gallery-item" >
-      <img src={props.image} alt={props.title} />
-    </div>
-  )
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHovered: false,
+    }
+    this.handleHover = this.handleHover.bind(this)
+  }
+
+  handleHover(){
+    this.setState({
+        isHovered: !this.state.isHovered
+    });
+  }
+
+  render(){
+    const hoverClass = this.state.isHovered ? "gallery-image hovered" : "gallery-image"
+    return(
+      <div className='gallery-item'>
+        <div className={hoverClass}>
+          <h3>{this.props.title}</h3>
+          <img src={this.props.image} alt={this.props.title} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}/>
+        </div>
+      </div>
+    )
+  }
 }
 
 
