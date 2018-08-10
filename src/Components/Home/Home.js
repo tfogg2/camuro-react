@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import HomeCta from './HomeCta.js'
 import Products from '../Products/Products.js'
 import Gallery from '../Gallery'
+import About from '../About'
+import OfferForm from '../Offers/OfferForm'
 import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Fade from 'react-reveal/Fade'
@@ -32,11 +34,13 @@ class Home extends Component {
       <div className="home">
         <div className={homeClass}></div>
         <HomeCta />
+        <About />
         <div className="home-gallery">
           <div className={galleryClass}>
             <Gallery />
           </div>
         </div>
+        <OfferForm />
         <Footer />
       </div>
     )
