@@ -33,6 +33,7 @@ class App extends Component {
           <Header addProduct={addProduct} removeProduct={removeProduct}/>
           <Switch>
             <Route exact path="/" render={() => <Home />}/>
+            <Route path="/:category" render={() => <Home />}/>
             <Route path="/cart" render={() => <Cart removeProduct={removeProduct} cartProducts={cartProducts} total={total}/>} />
             <Route path="/products" render={() => <Products addProduct={addProduct}/>} />
             <Route path="/product/:title" component={Product} />} />

@@ -27,12 +27,15 @@ class Home extends Component {
 
   render(){
     const homeClass = this.state.loaded ? 'home-bg visible' : 'home-bg'
+    const galleryClass = this.state.loaded ? 'visible-gallery home-content' : 'home-content'
     return(
       <div className="home">
         <div className={homeClass}></div>
         <HomeCta />
-        <div className="home-content">
-          <Gallery />
+        <div className="home-gallery">
+          <div className={galleryClass}>
+            <Gallery />
+          </div>
         </div>
         <Footer />
       </div>

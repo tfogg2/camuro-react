@@ -19,12 +19,13 @@ class GalleryItem extends Component {
   render(){
     const hoverClass = this.state.isHovered ? "gallery-image hovered" : "gallery-image"
     return(
-      <div className='gallery-item'>
-        <div className={hoverClass}>
-          <h3>{this.props.title}</h3>
-          <img src={this.props.image} alt={this.props.title} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}/>
+      <a href={this.props.credit} target="_blank">
+        <div className='gallery-item'>
+          <div className={hoverClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+            <img src={this.props.image} alt={this.props.title} />
+          </div>
         </div>
-      </div>
+      </a>
     )
   }
 }

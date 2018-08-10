@@ -5,9 +5,8 @@ class HomeCta extends Component {
   render(){
     return(
       <div className="home-cta">
-         <h1>We buy Film.</h1>
-         <Link to="/sell"><h2 className="selling">Are you selling?</h2></Link>
-
+         <h1>Selling your gear?</h1>
+         <Link to="/sell"><h2 className="selling">Let us know.</h2></Link>
       </div>
     )
   }

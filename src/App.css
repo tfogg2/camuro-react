@@ -111,12 +111,6 @@ h1{
   overflow: overlay;
   min-width: 672px;
 }
-.home-content{
-  width: 100%;
-  background: #fff;
-  overflow: overlay;
-
-}
 .home-bg{
   background: url('./Assets/leicaM6-dark.png') no-repeat;
   background-color: #080808;
@@ -156,6 +150,7 @@ h1{
 .home-bg.visible{
   opacity: 1;
 }
+
 .home-cta{
   width: 90%;
   text-align: left;
@@ -381,6 +376,7 @@ h1{
   padding: 10px;
 }
 .product-nav{
+  color: #000;
   margin: 0 auto;
   display: block;
   border-bottom: 1px solid #f3f3f3;
@@ -503,11 +499,25 @@ h1{
 /* Offers */
 
 /* Gallery */
+.visible-gallery.home-content{
+  opacity: 1;
+}
+.home-content{
+  width: 100%;
+  background: #fff;
+  overflow: overlay;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.home-gallery{
+  background: #fff;
+}
 .gallery{
   width: 90%;
   min-height: 600px;
   padding: 20px 5% 100px 5%;
   overflow: overlay;
+  background: #fff;
 }
 .gallery-header{
   color: #101010;
@@ -535,47 +545,44 @@ h1{
 
 }
 .gallery-item{
-  background: #000;
+  background: #fff;
+  float: left;
   opacity: 1;
   width: 33%;
   min-width: 200px;
   height: 240px;
-  margin-top: -6px;
   display: inline-block;
 }
+.gallery-image{
+  height: 240px;
+}
 .gallery-image h3{
-  opacity: 0;
+  display: none;
   width: 360px;
+  font-size: 32px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 80px;
   color: #fff;
   position: absolute;
   transition: opacity .1s ease;
 }
 .gallery-image.hovered h3{
-  opacity: 1;
+  display: block;
 }
-.gallery-item.show-cover{
+
+.gallery-image.hovered{
   background: #000;
 }
 .gallery-item img{
+  width: 100%;
   height: 240px;
+  float: left;
 }
 .gallery-image{
   opacity: 1;
 }
-.gallery-image.hovered {
-  opacity: .3;
-}
-.gallery-item.show-cover .cover{
-  opacity: .8
-}
-.cover{
-  width: 100%;
-  position: absolute;
-}
-.gallery-item img{
-  width: 100%
+.gallery-image.hovered img{
+  opacity: .4;
 }
 
 .about{
