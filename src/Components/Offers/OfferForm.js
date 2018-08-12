@@ -49,7 +49,7 @@ class OfferForm extends Component {
     return(
       <div className="sell-content">
         <div className="sell-form-content">
-          <h1>Offer Form</h1>
+          <h1>Get A Quote</h1>
           <form className="sell-form" id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
             <div className="form-group">
               <label>NAME</label>
@@ -63,11 +63,11 @@ class OfferForm extends Component {
               <label>STATE</label>
               <SelectUSState id="state" className="myClassName"/>
             </div>
-            <div className="form-group">
+            <div className="form-group item">
               <label>MODEL NAME OR DESCRIPTION</label>
               <input type="text" className={inputClass} id="modelName" onClick={this.inputActive.bind(this)}/>
             </div>
-            <div className="form-group">
+            <div className="form-group item">
               <label>ITEM CONDITION</label>
               <select id="condition" placeholder="Select item description">
                 <option>Like New</option>
@@ -78,7 +78,7 @@ class OfferForm extends Component {
                 <option>Faulty</option>
               </select>
             </div>
-            <button type="submit" className="btn btn-primary">Get A Quote Now</button>
+            <button type="submit" className="btn btn-primary">Get Quote</button>
           </form>
         </div>
       </div>

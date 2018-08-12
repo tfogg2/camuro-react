@@ -79,7 +79,6 @@ const GALLERY = [
   { image: require("../Assets/ariel.jpg"), title: "Sony Body", credit: "https://unsplash.com/photos/LaxqfiF6yp8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex", category: "The Cameras"},
   { image: require("../Assets/joseph-chan.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/99Ty_Vme3wA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
   { image: require("../Assets/jesus-santos.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/_T3upUiCqEE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/mia-domenico.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/1z1F5Qc30Bs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
   { image: require("../Assets/mpho-mojapelo.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/2TCy8pqFXsE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
   { image: require("../Assets/luo-ping.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/q2xUk_LEFOw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
 ]

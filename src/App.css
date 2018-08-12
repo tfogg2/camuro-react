@@ -109,7 +109,7 @@ h1{
 }
 .home{
   overflow: overlay;
-  min-width: 672px;
+  min-width: 650px;
 }
 .home-bg{
   background: url('./Assets/leicaM6-dark.png') no-repeat;
@@ -446,9 +446,9 @@ h1{
 .sell-form-content{
   background: #fdfdfd;
   width: 60%;
+  min-width: 500px;
   position: absolute;
   margin: 80px 20%;
-  padding: 40px;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -470,7 +470,7 @@ h1{
 }
 .sell-form label{
   text-align: left;
-  color: #b7b7b7;
+  color: #565656;
   float: left;
 }
 .sell-form textarea{
@@ -481,32 +481,48 @@ h1{
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
 }
-.sell-form a{
+.sell-form button{
   display: block;
   font-size: 18px;
-  width: 50%;
+  width: 30%;
   height: 40px;
   line-height: 40px;
   background: #c6574a;
   color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
   text-decoration: none;
   margin: 40px auto 0 auto;
   text-align: center;
-  transition: opacity .75s ease;
-  opacity: 1;
+  transition: background .75s ease;
 }
-.sell-form a:hover{
-  opacity: .8;
+.sell-form button:hover{
+  background: #ad483c;
 }
 .form-group{
-  width: 48%;
+  width: 28.3%;
+  height: 62px;
   float: left;
-  margin: 20px 1%;
+  margin: 40px 2.5%;
+}
+.form-group.item{
+  width: 45%;
+  margin-bottom: 80px;
 }
 .form-group input{
   border: none;
   border-bottom: 1px solid #e0e0e0;
   outline: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+.form-group select{
+  width: 100%;
+  background: #fff url('./Assets/input.png');
+  height: 30px;
+  border: 1px solid #d2d2d2;
+  margin-top: 10px;
+  cursor: pointer;
 }
 .form-group input.active{
   border-bottom: 1px solid #c657;
@@ -530,7 +546,7 @@ h1{
 .gallery{
   width: 90%;
   min-height: 600px;
-  padding: 20px 5% 100px 5%;
+  padding: 80px 5%;
   overflow: overlay;
   background: #fff;
 }
@@ -538,7 +554,6 @@ h1{
   color: #101010;
   width: 530px;
   margin: 0 auto;
-  padding: 60px 0;
 }
 .gallery-header span{
   color: #FFB3A4;
@@ -561,10 +576,8 @@ h1{
 }
 .gallery-item{
   background: #fff;
-  float: left;
   opacity: 1;
-  width: 33%;
-  min-width: 200px;
+  width: 360px;
   height: 240px;
   display: inline-block;
 }
@@ -589,9 +602,8 @@ h1{
   background: #000;
 }
 .gallery-item img{
-  width: 100%;
+  width: 360px;
   height: 240px;
-  float: left;
 }
 .gallery-image{
   opacity: 1;
@@ -603,7 +615,8 @@ h1{
 .about{
   height: 200px;
   color: #1d1d1d;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 80px 0px;
+  border-bottom: 2px solid #c6574a;
 }
