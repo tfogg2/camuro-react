@@ -12,7 +12,7 @@ body {
   overflow: overlay;
 }
 .footer{
-  height: 200px;
+  height: 100px;
   width: 100%;
   position: absolute;
   background: #1d1d1d;
@@ -439,14 +439,15 @@ h1{
 
 /* Offers */
 .sell-content{
-  background: #1d1d1d;
-  height: 560px;
+  background: #fff;
+  height: 640px;
+  border-top: 2px solid #c6574a;
 }
 .sell-form-content{
-  background: #f7f7f7;;
+  background: #fdfdfd;
   width: 60%;
   position: absolute;
-  margin: 40px 20%;
+  margin: 80px 20%;
   padding: 40px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -464,16 +465,19 @@ h1{
   height: 40px;
   margin-bottom: 20px;
   font-size: 14px;
-  border-radius: 5px;
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
+}
+.sell-form label{
+  text-align: left;
+  color: #b7b7b7;
+  float: left;
 }
 .sell-form textarea{
   color: #3E2C28;
   width: 100%;
   font-size: 14px;
   padding: 10px;
-  border-radius: 5px;
   border: 1px solid #e0e0e0;
   box-sizing: border-box;
 }
@@ -487,13 +491,25 @@ h1{
   color: #fff;
   text-decoration: none;
   margin: 40px auto 0 auto;
-  border-radius: 5px;
   text-align: center;
   transition: opacity .75s ease;
   opacity: 1;
 }
 .sell-form a:hover{
   opacity: .8;
+}
+.form-group{
+  width: 48%;
+  float: left;
+  margin: 20px 1%;
+}
+.form-group input{
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  outline: none;
+}
+.form-group input.active{
+  border-bottom: 1px solid #c657;
 }
 /* Offers */
 
@@ -585,8 +601,9 @@ h1{
 }
 
 .about{
+  height: 200px;
   color: #1d1d1d;
   width: 90%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 100px 40px;
 }
