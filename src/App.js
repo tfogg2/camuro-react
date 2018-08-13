@@ -30,7 +30,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Header addProduct={addProduct} removeProduct={removeProduct}/>
           <Switch>
             <Route exact path="/" render={() => <Home />}/>
             <Route path="/:category" render={() => <Home />}/>

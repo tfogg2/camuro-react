@@ -24,6 +24,7 @@ class Gallery extends Component {
   }
 
 
+
   render(){
     const Gallery = ({state:{ gallery, displayCategory }}) => (
       <div>
@@ -58,19 +59,19 @@ class Gallery extends Component {
   }
 }
 
-
 const ListCategories = (galleryCategories, setCategory ) => (
   galleryCategories.map((category) => {
     const cat = category
     return (
-      <li>
-        <NavLink exact="true" to={'/' + cat} key={category} className={`${category}`} onClick={() => setCategory(category)}>
-          {category}
-        </NavLink>
+      <li key={category} className={`${category}`} onClick={() => setCategory(category)}>
+        {category}
       </li>
     )
   })
 )
+
+
+
 
 const GALLERY = [
   { image: require("../Assets/chad-dalke.jpg"), title: "Shutter Button", credit: "https://unsplash.com/photos/4fydl6bJT8k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},

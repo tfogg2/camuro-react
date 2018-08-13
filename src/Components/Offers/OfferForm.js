@@ -8,7 +8,6 @@ class OfferForm extends Component {
     active: false
   }
 
-
   handleSubmit(e){
     e.preventDefault();
     const name = document.getElementById('name').value;
@@ -16,13 +15,15 @@ class OfferForm extends Component {
     const state = document.getElementById('state').value;
     const modelName = document.getElementById('modelName').value;
     const condition = document.getElementById('condition').value;
+    const price = document.getElementById('price').value;
+    const message = `state: ${state} \n modelName: ${modelName} \n condition: ${condition} \n price: ${price}`
     axios({
         method: "POST",
         url:"http://localhost:3002/send",
         data: {
             name: name,
             email: email,
-            condition: condition
+            message: message
         }
     }).then((response)=>{
         if (response.data.msg === 'success'){
@@ -30,6 +31,7 @@ class OfferForm extends Component {
             this.resetForm()
         }else if(response.data.msg === 'fail'){
             alert("Message failed to send.")
+            this.resetForm()
         }
     })
   }
@@ -49,23 +51,28 @@ class OfferForm extends Component {
     return(
       <div className="sell-content">
         <div className="sell-form-content">
-          <h1>Get A Quote</h1>
+          <h1>Get An Offer</h1>
           <form className="sell-form" id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
             <div className="form-group">
-              <label>NAME</label>
+              <label for="name">NAME</label>
               <input type="name" className={inputClass} id="name" aria-describedby="customerName" onClick={this.inputActive.bind(this)}/>
             </div>
             <div className="form-group">
-              <label>EMAIL</label>
+              <label for="email">EMAIL</label>
               <input type="email" className={inputClass} id="email" aria-describedby="emailHelp" onClick={this.inputActive.bind(this)}/>
             </div>
             <div className="form-group">
-              <label>STATE</label>
+              <label for="state">STATE</label>
               <SelectUSState id="state" className="myClassName"/>
             </div>
             <div className="form-group item">
-              <label>MODEL NAME OR DESCRIPTION</label>
+              <label for="modelName">MODEL NAME</label>
               <input type="text" className={inputClass} id="modelName" onClick={this.inputActive.bind(this)}/>
+            </div>
+            <div className="form-group item price">
+              <label for="price">ASKING PRICE</label>
+              <span>$</span>
+              <input type="number" className={inputClass} id="price" onClick={this.inputActive.bind(this)}/>
             </div>
             <div className="form-group item">
               <label>ITEM CONDITION</label>
@@ -78,7 +85,7 @@ class OfferForm extends Component {
                 <option>Faulty</option>
               </select>
             </div>
-            <button type="submit" className="btn btn-primary">Get Quote</button>
+            <button type="submit" className="btn btn-primary">Get Offer</button>
           </form>
         </div>
       </div>

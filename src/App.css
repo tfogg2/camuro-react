@@ -352,13 +352,21 @@ h1{
   margin: 17px 0 0 -20px;
   cursor: pointer;
 }
-.navLinks a{
+.navLinks button{
+  background: #000;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
   display: block;
   height: 65px;
   padding: 0 20px;
   text-decoration: none;
   color: #fff;
   transition: background .5s ease-in-out;
+}
+.navLinks button:hover{
+  background: #c6574a;
 }
 .navLinks .active{
   background: #c6574a;
@@ -506,8 +514,15 @@ h1{
   margin: 40px 2.5%;
 }
 .form-group.item{
-  width: 45%;
   margin-bottom: 80px;
+}
+.form-group.item.price span{
+  position: absolute;
+  color: #000;
+  margin-top: 32px;
+}
+#price {
+  padding-left: 15px;
 }
 .form-group input{
   border: none;
@@ -523,6 +538,7 @@ h1{
   border: 1px solid #d2d2d2;
   margin-top: 10px;
   cursor: pointer;
+  font-size: 14px;
 }
 .form-group input.active{
   border-bottom: 1px solid #c657;

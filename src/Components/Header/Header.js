@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
+
 
 class Header extends Component {
   render(){
     return(
       <div className="header">
-
         <div className="logo">
           <h1>
             <Link exact="true" to="/">
@@ -13,14 +13,13 @@ class Header extends Component {
             </Link>
           </h1>
         </div>
-
         <div className="nav">
           <div  className="right-nav">
             <ul className="navLinks">
               <li>
-                <NavLink to="/sell">
+                <button>
                   Sell
-                </NavLink>
+                </button>
               </li>
               <li>
                 <NavLink to="/about">
@@ -35,7 +34,6 @@ class Header extends Component {
             </ul>
           </div>
         </div>
-
       </div>
     )
   }
