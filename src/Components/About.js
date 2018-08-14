@@ -6,8 +6,8 @@ class About extends Component {
     return(
       <div className="content">
         <div className="about">
-          <h3>About</h3>
-          <p>Something about us.</p>
+          <h3>Why We Film</h3>
+          <p>In this digital world, camuro is commited to keeping film alive one restoration at a time</p>
         </div>
       </div>
     )

@@ -45,7 +45,7 @@ class Home extends Component {
               <ul className="navLinks">
                 <li className="scroll-link">
                   <button onClick={() => scrollToComponent(this.About, { offset: 0, align: 'top', duration: 1500})}>
-                    About
+                    Why
                   </button>
                 </li>
                 <li className="scroll-link">

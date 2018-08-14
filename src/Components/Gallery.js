@@ -15,16 +15,31 @@ class Gallery extends Component {
       isOpen: false,
       activePage: 15
     }
-    this.handlePageChange = this.handlePageChange.bind(this)
   }
 
-  handlePageChange(pageNumber) {
-    console.log(`active page is ${pageNumber}`);
-    this.setState({activePage: pageNumber});
+  componentDidMount() {
+    const { data: allPhotos = [] } = GALLERY;
+    this.setState({ allPhotos });
+  }
+  onPageChanged = data => {
+    const { allPhotos } = this.state;
+    const { currentPage, totalPages, pageLimit } = data;
+
+    const offset = (currentPage - 1) * pageLimit;
+    const currentPhotos = allPhotos.slice(offset, offset + pageLimit);
+
+    this.setState({ currentPage, currentPhotos, totalPages });
   }
 
 
   render(){
+    const { currentPhotos, currentPage, totalPages } = this.state
+    const allPhotos = this.state
+    const totalPhotos = allPhotos.length
+
+    if (totalPhotos === 0) return null;
+
+
     const Gallery = ({state:{ gallery }}) => (
       <div>
         {gallery
@@ -43,13 +58,6 @@ class Gallery extends Component {
         <div className="gallery-items">
           <Gallery itemsCountPerPage={4} state={state}/>
         </div>
-        <Pagination
-          hideDisabled
-          activePage={this.state.activePage}
-          itemsCountPerPage={4}
-          totalItemsCount={8}
-          onChange={this.handlePageChange}
-        ></Pagination>
       </div>
     )
 
@@ -60,13 +68,9 @@ class Gallery extends Component {
 
 const GALLERY = [
   { image: require("../Assets/chad-dalke.jpg"), title: "Chad Dalke", credit: "https://unsplash.com/photos/4fydl6bJT8k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/hanny.jpg"), title: "Hanny Naibaho", credit: "https://unsplash.com/photos/-3savqescr8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
   { image: require("../Assets/filtergrade-nikon.jpg"), title: "Filter Grade", credit: "https://unsplash.com/photos/vn5MU5VwdjQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/ariel.jpg"), title: "Ariel Domenden", credit: "https://unsplash.com/photos/LaxqfiF6yp8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex", category: "The Cameras"},
   { image: require("../Assets/joseph-chan.jpg"), title: "Joseph Chan", credit: "https://unsplash.com/photos/99Ty_Vme3wA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
   { image: require("../Assets/jesus-santos.jpg"), title: "Jesus Santos", credit: "https://unsplash.com/photos/_T3upUiCqEE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/mpho-mojapelo.jpg"), title: "Mpho Mojapelo", credit: "https://unsplash.com/photos/2TCy8pqFXsE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
-  { image: require("../Assets/luo-ping.jpg"), title: "Luo Ping", credit: "https://unsplash.com/photos/q2xUk_LEFOw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
 ]
 
 export default Gallery;
