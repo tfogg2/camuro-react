@@ -11,12 +11,6 @@ body {
   height: 100%;
   overflow: overlay;
 }
-.footer{
-  height: 100px;
-  width: 100%;
-  position: absolute;
-  background: #1d1d1d;
-}
 h1{
   margin: 0;
 }
@@ -137,7 +131,7 @@ h1{
     height: 300px;
   }
   .home .home-cta h1{
-    font-size: 38px;
+    font-size: 32px;
   }
   .home .home-cta h2{
     font-size: 18px;
@@ -168,6 +162,7 @@ h1{
 }
 .home-cta h2{
   padding: 20px 0 40px 0;
+  cursor: pointer;
   width: 155px;
   font-weight: 300;
   margin: 0;
@@ -291,8 +286,18 @@ h1{
   float: left;
   cursor: pointer;
 }
-.right-nav ul li:hover{
+.right-nav ul .scroll-link:hover{
   background: #c6574a;
+}
+.right-nav ul .insta-link{
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+.insta-link .instagram{
+  margin: 0;
 }
 .right-nav .sell:hover{
   background: #c6574a;
@@ -354,7 +359,7 @@ h1{
 }
 .navLinks button{
   background: #000;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -455,8 +460,7 @@ h1{
   background: #fdfdfd;
   width: 60%;
   min-width: 500px;
-  position: absolute;
-  margin: 80px 20%;
+  margin: 80px auto;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -574,11 +578,13 @@ h1{
 .gallery-header span{
   color: #FFB3A4;
 }
-.gallery-header h3{
+.home h3{
   font-size: 48px;
   font-weight: 300;
   font-family: BryantWeb,Helvetica,Arial,sans-serif;
-  border-bottom: .5px solid #FFB3A4;
+}
+.gallery-header h3{
+  border-bottom: .5px solid #c6574a;
 }
 .gallery-header p{
   font-size: 20px;
@@ -587,15 +593,13 @@ h1{
 .gallery-items{
   padding-top: 40px;
 }
-.gallery-items .react-reveal{
-
-}
 .gallery-item{
   background: #fff;
   opacity: 1;
   width: 360px;
   height: 240px;
   display: inline-block;
+  cursor: pointer;
 }
 .gallery-image{
   height: 240px;
@@ -627,12 +631,56 @@ h1{
 .gallery-image.hovered img{
   opacity: .4;
 }
-
+.backdrop{
+  background: rgba(0,0,0,0.82);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.gallery .gallery-item .modal{
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  margin: 100px auto;
+  padding: 30px;
+}
+.gallery .gallery-item .modal h4{
+  font-size: 32px;
+  margin: 10px auto;
+}
+.gallery-item .modal img{
+  width: 95%;
+  margin: 0 2.5%;
+  height: auto;
+}
 .about{
-  height: 200px;
+  height: 300px;
   color: #1d1d1d;
   width: 100%;
   margin: 0 auto;
   padding: 80px 0px;
   border-bottom: 2px solid #c6574a;
+}
+
+/* FOOTER */
+.footer{
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  background: #1d1d1d;
+}
+.instagram{
+  height: 40px;
+  width: 40px;
+  margin: 10px 5%;
+  border-radius: 9px;
+  float: left;
+  background-size: contain;
+  background: #000 url('./Assets/insta-opaque.svg') no-repeat center center;
+  transition: background .75s ease;
+}
+.instagram:hover{
+  background-color: #c6574a;
 }

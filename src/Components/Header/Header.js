@@ -31,6 +31,11 @@ class Header extends Component {
                   Shop
                 </NavLink>
               </li>
+              <li className="nav-instagram">
+                <a href="https://www.instagram.com/camuro.co/" target="_blank" alt="camuro-instagram">
+                  <div className="instagram"></div>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

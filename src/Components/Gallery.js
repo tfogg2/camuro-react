@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Fade from 'react-reveal/Fade'
 import GalleryItem from './GalleryItem.js'
+import Pagination from "react-js-pagination"
 import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
 
 
@@ -11,46 +12,44 @@ class Gallery extends Component {
     super(props);
     this.state = {
       gallery: GALLERY,
-      displayCategory: "The Cameras",
-      galleryCategories: GALLERY_CATEGORIES
+      isOpen: false,
+      activePage: 15
     }
-    this.setCategory = this.setCategory.bind(this);
-  }
-  setCategory(category, e) {
-    e.preventDefault()
-    this.setState({
-      displayCategory: category
-    })
+    this.handlePageChange = this.handlePageChange.bind(this)
   }
 
+  handlePageChange(pageNumber) {
+    console.log(`active page is ${pageNumber}`);
+    this.setState({activePage: pageNumber});
+  }
 
 
   render(){
-    const Gallery = ({state:{ gallery, displayCategory }}) => (
+    const Gallery = ({state:{ gallery }}) => (
       <div>
         {gallery
-          .filter(
-            ({ category }) =>
-              displayCategory === category
-          )
-          .map(({image, title, credit, category}) => (
-          <GalleryItem key={title} title={title} image={image} credit={credit} category={category} handleHover={this.handleHover} />
+          .map(({image, title, credit}) => (
+          <GalleryItem key={title} title={title} image={image} credit={credit} onClick={this.toggleModal} handleHover={this.handleHover} />
         ))}
       </div>
     )
 
-    const UI = ({ state, state: { gallery, galleryCategories }, setCategory }) => (
+    const UI = ({ state, state: { gallery },  }) => (
       <div className="gallery">
         <div className="gallery-header">
           <h3>Photos for the People</h3>
           <p>By the People</p>
         </div>
-        <ul className="product-nav">
-          {ListCategories(galleryCategories, setCategory )}
-        </ul>
         <div className="gallery-items">
-          <Gallery state={state} />
+          <Gallery itemsCountPerPage={4} state={state}/>
         </div>
+        <Pagination
+          hideDisabled
+          activePage={this.state.activePage}
+          itemsCountPerPage={4}
+          totalItemsCount={8}
+          onChange={this.handlePageChange}
+        ></Pagination>
       </div>
     )
 
@@ -59,36 +58,15 @@ class Gallery extends Component {
   }
 }
 
-const ListCategories = (galleryCategories, setCategory ) => (
-  galleryCategories.map((category) => {
-    const cat = category
-    return (
-      <li key={category} className={`${category}`} onClick={() => setCategory(category)}>
-        {category}
-      </li>
-    )
-  })
-)
-
-
-
-
 const GALLERY = [
-  { image: require("../Assets/chad-dalke.jpg"), title: "Shutter Button", credit: "https://unsplash.com/photos/4fydl6bJT8k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/hanny.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/-3savqescr8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/filtergrade-nikon.jpg"), title: "Film", credit: "https://unsplash.com/photos/vn5MU5VwdjQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/ariel.jpg"), title: "Sony Body", credit: "https://unsplash.com/photos/LaxqfiF6yp8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex", category: "The Cameras"},
-  { image: require("../Assets/joseph-chan.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/99Ty_Vme3wA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/jesus-santos.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/_T3upUiCqEE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
-  { image: require("../Assets/mpho-mojapelo.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/2TCy8pqFXsE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
-  { image: require("../Assets/luo-ping.jpg"), title: "Canon Rebel", credit: "https://unsplash.com/photos/q2xUk_LEFOw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
+  { image: require("../Assets/chad-dalke.jpg"), title: "Chad Dalke", credit: "https://unsplash.com/photos/4fydl6bJT8k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
+  { image: require("../Assets/hanny.jpg"), title: "Hanny Naibaho", credit: "https://unsplash.com/photos/-3savqescr8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
+  { image: require("../Assets/filtergrade-nikon.jpg"), title: "Filter Grade", credit: "https://unsplash.com/photos/vn5MU5VwdjQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
+  { image: require("../Assets/ariel.jpg"), title: "Ariel Domenden", credit: "https://unsplash.com/photos/LaxqfiF6yp8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex", category: "The Cameras"},
+  { image: require("../Assets/joseph-chan.jpg"), title: "Joseph Chan", credit: "https://unsplash.com/photos/99Ty_Vme3wA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
+  { image: require("../Assets/jesus-santos.jpg"), title: "Jesus Santos", credit: "https://unsplash.com/photos/_T3upUiCqEE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Cameras"},
+  { image: require("../Assets/mpho-mojapelo.jpg"), title: "Mpho Mojapelo", credit: "https://unsplash.com/photos/2TCy8pqFXsE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
+  { image: require("../Assets/luo-ping.jpg"), title: "Luo Ping", credit: "https://unsplash.com/photos/q2xUk_LEFOw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", category: "The Photos"},
 ]
-
-const uniqueItems = (x, i, array) => array.indexOf(x) === i
-const GALLERY_CATEGORIES = GALLERY.map(prod => prod.category).filter(
-  uniqueItems
-)
-
-GALLERY_CATEGORIES.sort()
 
 export default Gallery;

@@ -36,34 +36,39 @@ class Home extends Component {
           <div className="logo">
             <h1>
               <Link exact="true" to="/">
-                Camuro
+                camuro
               </Link>
             </h1>
           </div>
           <div className="nav">
             <div  className="right-nav">
               <ul className="navLinks">
-                <li>
+                <li className="scroll-link">
                   <button onClick={() => scrollToComponent(this.About, { offset: 0, align: 'top', duration: 1500})}>
                     About
                   </button>
                 </li>
-                <li>
+                <li className="scroll-link">
                   <button onClick={() => scrollToComponent(this.Gallery, { offset: 0, align: 'top', duration: 1500})}>
-                    Gallery
+                    Photos
                   </button>
                 </li>
-                <li>
+                <li className="scroll-link">
                   <button onClick={() => scrollToComponent(this.OfferForm, { offset: 0, align: 'top', duration: 1500})}>
                     Sell
                   </button>
+                </li>
+                <li className="insta-link">
+                  <a href="https://www.instagram.com/camuro.co/" target="_blank" alt="camuro-instagram" >
+                    <div className="instagram"></div>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div className={homeClass}></div>
-        <HomeCta ref={(section) => { this.Home = section; }} />
+        <HomeCta offerForm={this.OfferForm} />
         <About ref={(section) => { this.About = section; }}/>
         <div className="home-gallery" ref={(section) => { this.Gallery = section; }}>
           <div className={galleryClass}>

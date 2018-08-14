@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
-import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom';
+import React, {Component} from 'react'
+import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
+import scrollToComponent from 'react-scroll-to-component'
 
 class HomeCta extends Component {
   render(){
     return(
       <div className="home-cta">
          <h1>Selling your gear?</h1>
-         <Link to="/sell"><h2 className="selling">Let us know.</h2></Link>
+         <h2 className="selling" onClick={() => scrollToComponent(this.props.offerForm, { offset: 0, align: 'top', duration: 1500})}>Let us know.</h2>
       </div>
     )
   }

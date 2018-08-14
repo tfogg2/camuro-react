@@ -13,10 +13,10 @@ class OfferForm extends Component {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const state = document.getElementById('state').value;
-    const modelName = document.getElementById('modelName').value;
+    const model = document.getElementById('model').value;
     const condition = document.getElementById('condition').value;
     const price = document.getElementById('price').value;
-    const message = `state: ${state} \n modelName: ${modelName} \n condition: ${condition} \n price: ${price}`
+    const message = `state: ${state} \n model: ${model} \n condition: ${condition} \n price: ${price}`
     axios({
         method: "POST",
         url:"http://localhost:3002/send",
@@ -51,7 +51,7 @@ class OfferForm extends Component {
     return(
       <div className="sell-content">
         <div className="sell-form-content">
-          <h1>Get An Offer</h1>
+          <h3>Get An Offer</h3>
           <form className="sell-form" id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
             <div className="form-group">
               <label for="name">NAME</label>
@@ -65,14 +65,14 @@ class OfferForm extends Component {
               <label for="state">STATE</label>
               <SelectUSState id="state" className="myClassName"/>
             </div>
-            <div className="form-group item">
-              <label for="modelName">MODEL NAME</label>
-              <input type="text" className={inputClass} id="modelName" onClick={this.inputActive.bind(this)}/>
-            </div>
             <div className="form-group item price">
               <label for="price">ASKING PRICE</label>
               <span>$</span>
               <input type="number" className={inputClass} id="price" onClick={this.inputActive.bind(this)}/>
+            </div>
+            <div className="form-group item">
+              <label for="modelName">MODEL</label>
+              <input type="text" className={inputClass} id="model" onClick={this.inputActive.bind(this)}/>
             </div>
             <div className="form-group item">
               <label>ITEM CONDITION</label>

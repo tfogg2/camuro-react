@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Modal from './Modal'
 
 class GalleryItem extends Component {
 
@@ -6,8 +7,20 @@ class GalleryItem extends Component {
     super(props);
     this.state = {
       isHovered: false,
+      isOpen: false
     }
     this.handleHover = this.handleHover.bind(this)
+  }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+      isHovered: false
+    });
+  }
+
+  stopClose = (e) => {
+    e.stopPropagation()
   }
 
   handleHover(){
@@ -19,13 +32,13 @@ class GalleryItem extends Component {
   render(){
     const hoverClass = this.state.isHovered ? "gallery-image hovered" : "gallery-image"
     return(
-      <a href={this.props.credit} target="_blank">
-        <div className='gallery-item'>
-          <div className={hoverClass} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-            <img src={this.props.image} alt={this.props.title} />
-          </div>
+      <div className='gallery-item'>
+        <div className={hoverClass} onMouseOver={this.handleHover} onMouseLeave={this.handleHover} onClick={this.toggleModal}>
+          <img src={this.props.image} alt={this.props.title} />
         </div>
-      </a>
+        <Modal show={this.state.isOpen} onClose={this.toggleModal} stopClose={this.stopClose} image={this.props.image} title={this.props.title} credit={this.props.credit}>
+        </Modal>
+      </div>
     )
   }
 }
