@@ -1,13 +1,16 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
+import scrollToComponent from 'react-scroll-to-component'
 
 class About extends Component {
   render(){
     return(
       <div className="content">
         <div className="about">
-          <h3>Why We Film</h3>
-          <p>In this digital world, camuro is commited to keeping film alive one restoration at a time</p>
+          <div className="about-copy">
+            <h3>Mission</h3>
+            <p>Our mission here at camuro.co is to help keep the film community alive, one restoration at a time. Interested in giving back while selling some unwanted gear? <span onClick={() => scrollToComponent(this.props.offer, { offset: 0, align: 'top', duration: 1500})}>Fill out the form below</span> and we'll get back to you with an offer.</p>
+          </div>
         </div>
       </div>
     )

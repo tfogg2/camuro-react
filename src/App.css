@@ -286,14 +286,13 @@ h1{
   float: left;
   cursor: pointer;
 }
-.right-nav ul .scroll-link:hover{
+.right-nav ul li:hover{
   background: #c6574a;
 }
 .right-nav ul .insta-link{
-  width: 40px;
-  height: 40px;
-  margin-top: 8px;
-  margin-left: 10px;
+  width: 60px;
+  height: 65px;
+  padding: 10px;
   box-sizing: border-box;
 }
 .insta-link .instagram{
@@ -453,14 +452,16 @@ h1{
 /* Offers */
 .sell-content{
   background: #fff;
-  height: 640px;
+  height: 600px;
   border-top: 2px solid #c6574a;
 }
 .sell-form-content{
-  background: #fdfdfd;
+  background: #ffffff;
+  box-shadow: 1px 1px 6px #e8e8e8;
+  padding: 20px;
   width: 60%;
   min-width: 500px;
-  margin: 80px auto;
+  margin: 60px auto;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -629,7 +630,7 @@ h1{
   opacity: 1;
 }
 .gallery-image.hovered img{
-  opacity: .4;
+  opacity: .8;
 }
 .backdrop{
   background: rgba(0,0,0,0.82);
@@ -644,26 +645,41 @@ h1{
   border-radius: 5px;
   width: 50%;
   margin: 40px auto;
-  padding: 30px;
+  padding: 0px;
+  cursor: default;
 }
 .gallery .gallery-item .modal h4{
-  font-size: 32px;
-  margin: 10px auto;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: #c6574a;
+}
+.gallery .gallery-item .modal a{
+  text-decoration: none;
 }
 .gallery-item .modal img{
-  width: 95%;
-  margin: 0 2.5%;
+  width: 100%;
+  margin: 0;
   height: auto;
 }
 .about{
-  height: 300px;
+  max-height: 260px;
   color: #1d1d1d;
   width: 100%;
   margin: 0 auto;
-  padding: 80px 0px;
+  padding: 110px 0 120px 0;
   border-bottom: 2px solid #c6574a;
 }
-
+.about-copy{
+  width: 50%;
+  margin: 0 auto;
+}
+.about-copy p{
+  font-size: 20px;
+}
+.about-copy span{
+  color: #c6574a;
+  cursor: pointer;
+}
 /* FOOTER */
 .footer{
   height: 60px;
@@ -678,7 +694,7 @@ h1{
   border-radius: 9px;
   float: left;
   background-size: contain;
-  background: #000 url('./Assets/insta-opaque.svg') no-repeat center center;
+  background: url('./Assets/insta-opaque.svg') no-repeat center center;
   transition: background .75s ease;
 }
 .instagram:hover{

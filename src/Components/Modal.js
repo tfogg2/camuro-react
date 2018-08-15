@@ -14,9 +14,6 @@ class Modal extends React.Component {
           <img src={this.props.image} alt={this.props.title} />
           <div className="modalFooter">
             <a href={this.props.credit} target="_blank"><h4>{this.props.title}</h4></a>
-            <button onClick={this.props.onClose}>
-              Close
-            </button>
           </div>
         </div>
       </div>

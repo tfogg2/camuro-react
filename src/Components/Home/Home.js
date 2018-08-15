@@ -43,17 +43,17 @@ class Home extends Component {
           <div className="nav">
             <div  className="right-nav">
               <ul className="navLinks">
-                <li className="scroll-link">
-                  <button onClick={() => scrollToComponent(this.About, { offset: 0, align: 'top', duration: 1500})}>
-                    Why
+                <li>
+                  <button onClick={() => scrollToComponent(this.About, { offset: -200, align: 'top', duration: 1500})}>
+                    Mission
                   </button>
                 </li>
-                <li className="scroll-link">
+                <li>
                   <button onClick={() => scrollToComponent(this.Gallery, { offset: 0, align: 'top', duration: 1500})}>
                     Photos
                   </button>
                 </li>
-                <li className="scroll-link">
+                <li>
                   <button onClick={() => scrollToComponent(this.OfferForm, { offset: 0, align: 'top', duration: 1500})}>
                     Sell
                   </button>
@@ -68,8 +68,8 @@ class Home extends Component {
           </div>
         </div>
         <div className={homeClass}></div>
-        <HomeCta offerForm={this.OfferForm} />
-        <About ref={(section) => { this.About = section; }}/>
+        <HomeCta about={this.About} />
+        <About offer={this.OfferForm} ref={(section) => { this.About = section; }}/>
         <div className="home-gallery" ref={(section) => { this.Gallery = section; }}>
           <div className={galleryClass}>
             <Gallery />
