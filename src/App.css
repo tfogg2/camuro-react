@@ -695,7 +695,7 @@ h1{
   float: left;
   background-size: contain;
   background: url('./Assets/insta-opaque.svg') no-repeat center center;
-  transition: background .75s ease;
+  transition: background .5s ease;
 }
 .instagram:hover{
   background-color: #c6574a;
