@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
 
 const Product = props => {
   return(
@@ -18,4 +18,4 @@ const Product = props => {
   )
 }
 
-export default Product;
+export default Product

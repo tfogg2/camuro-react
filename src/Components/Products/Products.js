@@ -3,7 +3,6 @@ import Product from './Product.js'
 import { BrowserRouter, Route, NavLink, Link } from 'react-router-dom'
 import _ from 'lodash'
 
-
 const ListCategories = (productCategories, setCategory ) => (
   productCategories.map((category) => {
     const cat = category === "All" ? '' : category
@@ -16,7 +15,6 @@ const ListCategories = (productCategories, setCategory ) => (
     )
   })
 )
-
 
 class Products extends Component {
   constructor(props) {
@@ -79,12 +77,7 @@ class Products extends Component {
 
 // data
 const PRODUCTS = [
-  { image: require("../../Assets/leica-r7.png"), title: "Nikon 35mm", description: "This is an example description about some camera shenanigans.", category: "Lenses", price: 100},
-  { image: require("../../Assets/camera-body.png"), title: "Canon Rebel", description: "This is an example description about some camera shenanigans.", category: "Bodies", price: 50},
-  { image: require("../../Assets/film.png"), title: "Film", description: "This is an example description about some camera shenanigans.", category: "Accessories", price: 12 },
-  { image: require("../../Assets/lenses.png"), title: "Canon Prime 100mm", description: "This is an example description about some camera shenanigans.", category: "Lenses", price: 400 },
-  { image: require("../../Assets/leica-r7.png"), title: "Sony Body", description: "This is an example description about some camera shenanigans.", category: "Bodies", price: 800 },
-  { image: require("../../Assets/camera-body.png"), title: "Shutter Button", description: "This is an example description about some camera shenanigans.", category: "Accessories", price: 12 },
+  { image: require("../../Assets/CanonSun.JPG"), title: "Nikon 35mm", description: "This is an example description about some camera shenanigans.", category: "Lenses", price: 100},
 ]
 
 const uniqueItems = (x, i, array) => array.indexOf(x) === i

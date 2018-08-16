@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import ReactContactForm from 'react-mail-form'
 import axios from 'axios'
 import SelectUSState from 'react-select-us-states'
@@ -10,7 +10,7 @@ class OfferForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
     const state = document.getElementById('state').value
@@ -41,7 +41,7 @@ class OfferForm extends Component {
         }
     }).then((response)=>{
         if (response.data.msg === 'success'){
-            alert("Message Sent.");
+            alert("Message Sent.")
             this.resetForm()
         }else if(response.data.msg === 'fail'){
             alert("Message failed to send.")
@@ -72,7 +72,7 @@ class OfferForm extends Component {
 
 
   resetForm(){
-    document.getElementById('contact-form').reset();
+    document.getElementById('contact-form').reset()
   }
 
   render(){
@@ -121,4 +121,4 @@ class OfferForm extends Component {
   }
 }
 
-export default OfferForm;
+export default OfferForm

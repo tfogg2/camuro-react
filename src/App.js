@@ -12,14 +12,13 @@ import Home from './Components/Home/Home.js'
 import Products from './Components/Products/Products.js'
 import Product from './Components/Products/Product.js'
 import OfferForm from './Components/Offers/OfferForm.js'
-import Brands from './Components/Brands.js'
 import About from './Components/About.js'
 import NotFound from './Components/NotFound.js'
-import './App.css';
+import './App.css'
 
 class App extends Component {
   constructor(props) {
-   super(props);
+   super(props)
   }
 
   render() {
@@ -32,19 +31,15 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/" render={() => <Home />}/>
-            <Route path="/:category" render={() => <Home />}/>
             <Route path="/cart" render={() => <Cart removeProduct={removeProduct} cartProducts={cartProducts} total={total}/>} />
             <Route path="/products" render={() => <Products addProduct={addProduct}/>} />
             <Route path="/product/:title" component={Product} />} />
-            <Route path="/brands" component={Brands} />} />
-            <Route path="/sell" component={OfferForm} />} />
-            <Route path="/about" component={About} />} />
             <Route component={NotFound} />
           </Switch>
 
         </div>
       </BrowserRouter>
-    );
+    )
   }
 }
 
@@ -55,4 +50,4 @@ const mapStateToProps = state => (
   }
 )
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App)
