@@ -562,7 +562,10 @@ h1{
   font-size: 14px;
 }
 .form-group input.active{
-  border-bottom: 1px solid #c657;
+  border-bottom: 1px solid #c6574a;
+}
+.form-group input.error{
+  border-bottom: 2px solid #ad483c;
 }
 /* Offers */
 
@@ -620,6 +623,8 @@ h1{
 }
 .gallery-image{
   height: 240px;
+  z-index: 400;
+  position: relative;
 }
 .gallery-image h3{
   display: none;
@@ -651,6 +656,7 @@ h1{
 .backdrop{
   background: rgba(0,0,0,0.82);
   position: fixed;
+  z-index: 500;
   top: 0;
   bottom: 0;
   left: 0;
@@ -658,6 +664,7 @@ h1{
 }
 .gallery .gallery-item .modal{
   background: #fff;
+  z-index: 500;
   border-radius: 5px;
   width: 50%;
   top: 10%;
