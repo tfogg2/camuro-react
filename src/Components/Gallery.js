@@ -53,8 +53,7 @@ class Gallery extends Component {
     const UI = ({ state, state: { gallery },  }) => (
       <div className="gallery">
         <div className="gallery-header">
-          <h3>Photos for the People</h3>
-          <p>By the People</p>
+          <img src={require('../Assets/photos.svg')} alt="photos" />
         </div>
         <div className="gallery-items">
           <Gallery itemsCountPerPage={4} state={state}/>

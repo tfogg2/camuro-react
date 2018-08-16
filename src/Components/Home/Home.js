@@ -67,15 +67,19 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className={homeClass}></div>
-        <HomeCta about={this.About} />
-        <About offer={this.OfferForm} ref={(section) => { this.About = section; }}/>
-        <div className="home-gallery" ref={(section) => { this.Gallery = section; }}>
-          <div className={galleryClass}>
-            <Gallery />
-          </div>
+        <div className="splash-background">
+          <div className={homeClass}></div>
         </div>
-        <OfferForm ref={(section) => { this.OfferForm = section; }}/>
+        <HomeCta about={this.About} />
+        <div className="content">
+          <About offer={this.OfferForm} ref={(section) => { this.About = section; }}/>
+          <div className="home-gallery" ref={(section) => { this.Gallery = section; }}>
+            <div className={galleryClass}>
+              <Gallery />
+            </div>
+          </div>
+          <OfferForm ref={(section) => { this.OfferForm = section; }}/>
+        </div>
         <Footer ref={(section) => { this.Footer = section; }}/>
       </div>
     )
