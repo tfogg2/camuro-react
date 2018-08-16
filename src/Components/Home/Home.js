@@ -44,7 +44,7 @@ class Home extends Component {
             <div  className="right-nav">
               <ul className="navLinks">
                 <li>
-                  <button onClick={() => scrollToComponent(this.About, { offset: -200, align: 'top', duration: 1500})}>
+                  <button onClick={() => scrollToComponent(this.About, { offset: .5, align: 'bottom', duration: 1500})}>
                     Mission
                   </button>
                 </li>

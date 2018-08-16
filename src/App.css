@@ -292,7 +292,7 @@ h1{
 .right-nav ul .insta-link{
   width: 60px;
   height: 65px;
-  padding: 10px;
+  padding: 14px 10px 10px 10px;
   box-sizing: border-box;
 }
 .insta-link .instagram{
@@ -452,16 +452,16 @@ h1{
 /* Offers */
 .sell-content{
   background: #fff;
-  height: 600px;
+  height: 520px;
   border-top: 2px solid #c6574a;
 }
 .sell-form-content{
   background: #ffffff;
-  box-shadow: 1px 1px 6px #e8e8e8;
+  box-shadow: 1px 1px 6px #a0a0a0;
   padding: 20px;
   width: 60%;
   min-width: 500px;
-  margin: 60px auto;
+  margin: 20px auto;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -567,7 +567,7 @@ h1{
 .gallery{
   width: 90%;
   min-height: 600px;
-  padding: 80px 5%;
+  padding: 50px 5%;
   overflow: overlay;
   background: #fff;
 }
@@ -644,17 +644,17 @@ h1{
   background: #fff;
   border-radius: 5px;
   width: 50%;
-  margin: 40px auto;
+  top: 10%;
+  position: absolute;
+  margin: 0px 25%;
+  opacity: 1;
   padding: 0px;
   cursor: default;
 }
 .gallery .gallery-item .modal h4{
   font-size: 20px;
-  padding: 10px 20px;
-  color: #c6574a;
-}
-.gallery .gallery-item .modal a{
-  text-decoration: none;
+  padding: 10px 0px 20px 0;
+  color: #000;
 }
 .gallery-item .modal img{
   width: 100%;
@@ -662,11 +662,10 @@ h1{
   height: auto;
 }
 .about{
-  max-height: 260px;
   color: #1d1d1d;
   width: 100%;
   margin: 0 auto;
-  padding: 110px 0 120px 0;
+  padding: 50px 0 50px 0;
   border-bottom: 2px solid #c6574a;
 }
 .about-copy{
@@ -675,6 +674,7 @@ h1{
 }
 .about-copy p{
   font-size: 20px;
+  margin-top: 10px;
 }
 .about-copy span{
   color: #c6574a;
