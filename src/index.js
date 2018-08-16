@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import cartReducer from './Reducers/Cart'
 import './index.css'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
 
 const store = createStore(
   cartReducer,
@@ -17,4 +16,3 @@ ReactDOM.render(
     <App />
   </Provider>, document.getElementById('root')
 )
-registerServiceWorker()
