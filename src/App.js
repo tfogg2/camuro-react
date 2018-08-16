@@ -7,7 +7,6 @@ import * as CartActionCreators from './Actions/Cart'
 import { connect } from 'react-redux'
 
 import Cart from './Components/Cart'
-import Header from './Components/Header/Header.js'
 import Home from './Components/Home/Home.js'
 import Products from './Components/Products/Products.js'
 import Product from './Components/Products/Product.js'
